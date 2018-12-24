@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentManagement.DataAccess.Abstractions\DocumentManagement.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\DocumentManagement.Domain.Abstractions\DocumentManagement.Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\DocumentManagement.Domain\DocumentManagement.Domain.csproj" />
+    <ProjectReference Include="..\DocumentManagement.Exceptional\DocumentManagement.Exceptional.csproj" />
+    <ProjectReference Include="..\DocumentManagement.Models\DocumentManagement.Models.csproj" />
+  </ItemGroup>
+
+</Project>

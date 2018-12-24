@@ -1,0 +1,30 @@
+$box-shadow: 0 3px 7px rgba(0,0,0,.1);
+$white: #fff;
+
+.documents-list {
+	background-color: $white;
+    -webkit-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+    border-radius: .5rem;
+	padding: .2rem 2.5rem 1.875rem;
+	margin-top: 3rem;
+	
+	.panel {
+		background-color: $white;
+		-webkit-box-shadow: $box-shadow;
+		box-shadow: $box-shadow;
+		border-radius: .5rem;
+
+		.panel-header {
+			align-items: center;
+			padding: 1.25rem 2.5rem;
+		}
+	}
+}
+
+.invalid-feedback {
+	margin-top: .25rem;
+	font-size: .875rem;
+	color: #c71717;
+}
+

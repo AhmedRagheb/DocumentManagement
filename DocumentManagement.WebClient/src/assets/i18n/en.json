@@ -1,0 +1,20 @@
+{
+	"app-title": "Document Management",
+	"add-file": "Add file",
+	"add": "Add",
+	"are-you-sure": "Are you sure?",
+	"no": "No",
+	"upload-file": "Upload File",
+	"upload": "Upload",
+	"save": "Save",
+	"documents": "Documents List",
+	"file-upload-max-size-exceeded-error-message": "Maximum upload size exceeded ({0} of {1} allowed)",
+	"file-upload-wrong-file-type-error-message": "Type is not allowed. Allowed types: {0}",
+	"file-upload-queue-limit-reached-error-message": "You can not upload more than {0} files at a time",
+	"file-upload-file-uploaded-success-message": "File has been uploaded",
+	"file-upload-error-message": "Something went wrong",
+	"delete-file-success-message": "File has been deleted",
+	"delete-file-alert-message": "You are going to delete a file",
+	"yes": "Yes",
+	"save-changes": "Save changes"
+}

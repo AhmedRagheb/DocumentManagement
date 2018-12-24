@@ -1,0 +1,33 @@
+@font-face {
+	font-family: 'myArial';
+	src: url('assets/fonts/myArial/myArial.eot');
+	src: url('assets/fonts/myArial/myArial.woff2') format('woff2'),
+	url('assets/fonts/myArial/myArial.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'myArial';
+	src: url('assets/fonts/myArial/myArial_Italic/myArial_Italic.eot');
+	src: url('assets/fonts/myArial/myArial_Italic/myArial_Italic.woff2') format('woff2'),
+	url('assets/fonts/myArial/myArial_Italic/myArial_Italic.eot?#iefix') format('embedded-opentype');
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'myArial';
+	src: url('assets/fonts/myArial/myArial_BoldItalic/myArial_BoldItalic.eot');
+	src: url('assets/fonts/myArial/myArial_BoldItalic/myArial_BoldItalic.woff2') format('woff2'),
+	url('assets/fonts/myArial/myArial_BoldItalic/myArial_BoldItalic.eot?#iefix') format('embedded-opentype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'myArial';
+	src: url('assets/fonts/myArial/myArial_Bold/myArial_Bold.eot');
+	src: url('assets/fonts/myArial/myArial_Bold/myArial_Bold.woff2') format('woff2'),
+	url('assets/fonts/myArial/myArial_Bold/myArial_Bold.eot?#iefix') format('embedded-opentype');
+	font-weight: bold;
+}

@@ -1,0 +1,27 @@
+﻿[
+	{
+		"Extention": "jpg",
+		"ContentType": "image/jpeg",
+		"IsDeleted": false
+	},
+	{
+		"Extention": "jpeg",
+		"ContentType": "image/jpeg",
+		"IsDeleted": false
+	},
+	{
+		"Extention": "gif",
+		"ContentType": "image/gif",
+		"IsDeleted": false
+	},
+	{
+		"Extention": "pdf",
+		"ContentType": "application/pdf",
+		"IsDeleted": false
+	},
+	{
+		"Extention": "txt",
+		"ContentType": "text/plain",
+		"IsDeleted": false
+	}
+]

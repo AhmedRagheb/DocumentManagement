@@ -1,0 +1,27 @@
+$table-cell-padding: .625rem !default;
+
+.table {
+	display: block;
+}
+
+.table-row {
+	display: flex;
+	justify-content: space-between;
+	// margin-left: -($table-cell-padding);
+	// margin-right: -($table-cell-padding);
+	&:not(.table-header-row) {
+		border-top: 1px solid gray;
+	}
+	&.table-header-row {
+		font-weight: bold;
+		.table-header-cell {
+			padding: $table-cell-padding;
+		}
+	}
+	.table-cell {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		padding: ($table-cell-padding * 2) $table-cell-padding;
+	}
+}

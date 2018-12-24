@@ -1,0 +1,80 @@
+<div class="documents-list">
+	<div class="row" panel-header>
+		<h4>{{ 'documents' | translate }}</h4>
+		<button class="btn waves-effect waves-light right" (click)="openModal(uploadDocumentModal)">
+			{{ 'add-file' | translate }}
+			<i class="material-icons right">file_upload</i>
+		</button>
+	</div>
+	<div class="row" panel-body>
+		<cdk-table #table [dataSource]="dataSource" class="table striped">
+
+			<ng-container cdkColumnDef="name">
+				<cdk-header-cell *cdkHeaderCellDef class="table-cell table-header-cell column-name"> {{ 'name' | translate }} </cdk-header-cell>
+				<cdk-cell *cdkCellDef="let row" class="table-cell column-name">
+					{{ row.originalDocumentName }}
+				</cdk-cell>
+			</ng-container>
+
+			<ng-container cdkColumnDef="download">
+				<cdk-header-cell *cdkHeaderCellDef class="table-cell table-header-cell column-download"> {{ 'download' | translate }} </cdk-header-cell>
+				<cdk-cell *cdkCellDef="let row" class="table-cell column-download">
+					<button (click)="download(row.documentId, row.originalDocumentName)" class="waves-effect waves-light blue btn-small">
+						<i class="material-icons left">file_download</i>{{ 'download' | translate }}</button>
+				</cdk-cell>
+			</ng-container>
+
+			<ng-container cdkColumnDef="delete">
+				<cdk-header-cell *cdkHeaderCellDef class="table-cell table-header-cell column-delete"> {{ 'delete' | translate }} </cdk-header-cell>
+				<cdk-cell *cdkCellDef="let row" class="table-cell column-delete">
+					<button (click)="openModal(deleteDocumentModal, row.documentId, 'modal-alert modal-sm')" class="waves-effect waves-light red btn-small">
+						<i class="material-icons left">delete</i>{{ 'delete' | translate }}</button>
+				</cdk-cell>
+			</ng-container>
+
+			<cdk-header-row *cdkHeaderRowDef="displayedColumns" class="table-row table-header-row"></cdk-header-row>
+			<cdk-row *cdkRowDef="let row; columns: displayedColumns; let x = index" class="table-row"></cdk-row>
+
+		</cdk-table>
+	</div>
+</div>
+
+<ng-template #uploadDocumentModal>
+	<div class="modal-header">
+		<h3 class="modal-title">{{ 'upload-file' | translate }}</h3>
+	</div>
+	<div class="modal-body">
+		<input type="file" ng2FileSelect [uploader]="uploader" multiple/>
+		<div class="invalid-feedback" *ngIf="errorMessage">{{ errorMessage }}</div>
+		<ul class="list-group Documents">
+			<li class="list-group-item" *ngFor="let item of uploader.queue">
+				<strong>{{ item?.file?.name }}</strong>
+				<button (click)="item.remove()" class="btn-floating waves-effect waves-light red btn-small">
+					<i class="material-icons left">delete</i>
+				</button>
+			</li>
+		</ul>
+	</div>
+	<div class="modal-footer">
+		<button (click)="modalRef.hide()" class="waves-effect waves-light btn-small">
+			<i class="material-icons left">cloud</i>{{ 'cancel' | translate }}</button>
+		<button class="waves-effect waves-light red btn-small" (click)="uploadAll($event)" [disabled]="!uploader.getNotUploadedItems().length">
+			<i class="material-icons left">file_upload</i>{{ 'upload' | translate }}
+		</button>
+	</div>
+</ng-template>
+
+<ng-template #deleteDocumentModal class="modal">
+	<div class="modal-header">
+		<h3 class="modal-title">{{ 'are-you-sure' | translate }}</h3>
+	</div>
+	<div class="modal-body">
+		{{ 'delete-file-alert-message' | translate }}
+	</div>
+	<div class="modal-footer">
+		<button (click)="modalRef.hide()" class="waves-effect waves-light btn-small">
+			<i class="material-icons left">cloud</i>{{ 'cancel' | translate }}</button>
+		<button (click)="deleteDocument($event, modalRef.content)" class="waves-effect waves-light red btn-small">
+			<i class="material-icons left">delete</i>{{ 'delete' | translate }}</button>
+	</div>
+</ng-template>
